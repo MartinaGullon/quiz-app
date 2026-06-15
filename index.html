@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- PANTALLA: INICIO -->
+        <section id="pantalla-inicio" class="pantalla">
+            <header class="text-center mb-5">
+                <div class="quiz-icon">🧠</div>
+                <h1 class="quiz-titulo">Quiz Challenge</h1>
+                <p class="quiz-subtitulo">Poné a prueba tus conocimientos</p>
+            </header>
+
+            <article class="card-quiz text-center">
+                <h2 class="mb-4">Elegí tu nivel</h2>
+                <div class="niveles-grid">
+                    <button class="btn-nivel" data-nivel="facil">
+                        <span class="nivel-emoji">🟢</span>
+                        <span class="nivel-nombre">Fácil</span>
+                        <span class="nivel-desc">15 seg por pregunta</span>
+                    </button>
+                    <button class="btn-nivel" data-nivel="medio">
+                        <span class="nivel-emoji">🟡</span>
+                        <span class="nivel-nombre">Medio</span>
+                        <span class="nivel-desc">10 seg por pregunta</span>
+                    </button>
+                    <button class="btn-nivel" data-nivel="dificil">
+                        <span class="nivel-emoji">🔴</span>
+                        <span class="nivel-nombre">Difícil</span>
+                        <span class="nivel-desc">7 seg por pregunta</span>
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- PANTALLA: PREGUNTA -->
+        <section id="pantalla-pregunta" class="pantalla d-none">
+            <header class="pregunta-header">
+                <div class="progreso-info">
+                    <span id="numero-pregunta"></span>
+                    <span id="puntaje-actual">⭐ 0</span>
+                </div>
+                <div class="barra-progreso">
+                    <div class="barra-relleno" id="barra-relleno"></div>
+                </div>
+                <div class="temporizador-contenedor">
+                    <div class="temporizador" id="temporizador">
+                        <span id="tiempo-restante"></span>
+                    </div>
+                </div>
+            </header>
+
+            <article class="card-quiz">
+                <div class="categoria-badge" id="categoria-badge"></div>
+                <h2 class="pregunta-texto" id="pregunta-texto"></h2>
+                <div class="opciones-grid" id="opciones-grid"></div>
+            </article>
+        </section>
+
+        <!-- PANTALLA: RESULTADO -->
+        <section id="pantalla-resultado" class="pantalla d-none">
+            <article class="card-quiz text-center">
+                <div class="resultado-emoji" id="resultado-emoji"></div>
+                <h2 class="resultado-titulo" id="resultado-titulo"></h2>
+                <p class="resultado-desc" id="resultado-desc"></p>
+
+                <div class="puntaje-final">
+                    <span id="puntaje-final-num"></span>
+                    <span class="puntaje-label">puntos</span>
+                </div>
+
+                <div class="estadisticas">
+                    <div class="stat">
+                        <span class="stat-num" id="stat-correctas"></span>
+                        <span class="stat-label">Correctas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" id="stat-incorrectas"></span>
+                        <span class="stat-label">Incorrectas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" id="stat-porcentaje"></span>
+                        <span class="stat-label">Aciertos</span>
+                    </div>
+                </div>
+
+                <div class="resultado-acciones">
+                    <button class="btn-accion btn-reintentar" id="btn-reintentar">
+                        <i class="bi bi-arrow-repeat"></i> Jugar de nuevo
+                    </button>
+                    <button class="btn-accion btn-cambiar-nivel" id="btn-cambiar-nivel">
+                        <i class="bi bi-sliders"></i> Cambiar nivel
+                    </button>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">Sitio creado por Martina Gullón — 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
